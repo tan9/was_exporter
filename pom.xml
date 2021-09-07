@@ -14,6 +14,13 @@
     <name>was_exporter</name>
     <description>was_exporter</description>
 
+    <licenses>
+        <license>
+            <name>GNU General Public License (GPL) version 3.0</name>
+            <distribution>https://www.gnu.org/licenses/gpl-3.0.html</distribution>
+        </license>
+    </licenses>
+
     <properties>
         <java.version>1.8</java.version>
 
