@@ -28,7 +28,6 @@ import com.github.veithen.visualwas.client.ras.RasLoggingFeature;
 import com.github.veithen.visualwas.client.repository.RepositoryClientFeature;
 import com.github.veithen.visualwas.connector.feature.Feature;
 import com.github.veithen.visualwas.jmx.soap.SOAPJMXConnector;
-import com.github.veithen.visualwas.trust.TrustStore;
 
 import javax.management.remote.JMXConnectorFactory;
 import java.net.Proxy;
@@ -48,11 +47,7 @@ public final class EnvUtil {
         // In VisualVM, one typically configures the HTTP proxy to download new plugins and updates,
         // i.e. to connect to the Internet. SOAP connections to WebSphere should not pass through that proxy.
         env.put(SOAPJMXConnector.PROXY, Proxy.NO_PROXY);
-        if (securityEnabled) {
-            env.put(SOAPJMXConnector.TRUST_MANAGER, TrustStore.getInstance().createTrustManager());
-        }
-        WebSphereClassLoaderProvider classLoaderProvider = WebSphereClassLoaderProvider.getInstance();
-        env.put(SOAPJMXConnector.CLASS_LOADER_PROVIDER, classLoaderProvider);
+
         List<Feature> features = new ArrayList<>();
         features.addAll(Arrays.asList(
                 ConfigClientFeature.INSTANCE,

@@ -1,5 +1,7 @@
 package io.prometheus.jmx;
 
+import com.github.veithen.visualwas.env.EnvUtil;
+
 import javax.management.Attribute;
 import javax.management.AttributeList;
 import javax.management.JMException;
@@ -80,7 +82,7 @@ class JmxScraper {
         if (jmxUrl.isEmpty()) {
           beanConn = ManagementFactory.getPlatformMBeanServer();
         } else {
-          Map<String, Object> environment = new HashMap<String, Object>();
+          Map<String, Object> environment = EnvUtil.createEnvironment(false);
           if (username != null && username.length() != 0 && password != null && password.length() != 0) {
             String[] credent = new String[] {username, password};
             environment.put(JMXConnector.CREDENTIALS, credent);
