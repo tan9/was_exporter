@@ -1,0 +1,4 @@
+jmxUrl: service:jmx:soap://localhost:8880
+ssl: false
+lowercaseOutputName: false
+lowercaseOutputLabelNames: false
