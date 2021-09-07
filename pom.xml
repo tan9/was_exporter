@@ -38,6 +38,10 @@
             <artifactId>jmx_prometheus_httpserver</artifactId>
             <version>${jmx_prometheus.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
